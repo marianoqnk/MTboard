@@ -92,6 +92,8 @@ MTboard::MTboard()
   Serial.begin(57600);
   for(int n=0;n<TECLAS;n++) pinMode(puls[n],OUTPUT);
   void iniEEPROM();
+   matrix.setPosition(0, 0, 0); // The first display is at <0, 0>
+  matrix.setRotation(0, 0);    // The first display is position upside down
 }
 
 void  MTboard::textoScroll(char *mensaje)
@@ -127,6 +129,7 @@ void MTboard::drawPixel(int x, int y,int color)
 }
 void MTboard::drawBitmap(byte icono)
 {
+	atiendeSerie();
   matrix.fillScreen(0);
   switch(icono)
   {
@@ -158,6 +161,7 @@ long tiempo = millis();
 for (int n = 0; n < TECLAS; n++) pinMode(puls[n], INPUT_PULLUP);
 
   do {
+	atiendeSerie();
     for (int c = 0; c < TECLAS; c++) //declaro e inicio la variable c simultaneamente
     {
       if (digitalRead(puls[c]) == LOW)
