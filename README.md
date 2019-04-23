@@ -9,3 +9,7 @@ Las conexiones son:
   * DIN
   * CS
   * CLK
+  
+Dependencias:
+Necesita tener intalada la librería MAX72xxpanel: 
+https://github.com/markruys/arduino-Max72xxPanel
