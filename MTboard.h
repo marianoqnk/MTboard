@@ -2,7 +2,7 @@
 #define MT_BOARD
 
 #define TECLAS 4
-#define KEY_TIMEOUT 2000
+
 
 #define ALEGRE 0
 #define TRISTE 1
@@ -30,6 +30,7 @@ class MTboard
 {
   public:
   MTboard();
+  ini();
   //LED PULSADORES
   void apagaTodos();
   void enciendeTodos();

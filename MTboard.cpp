@@ -86,13 +86,14 @@ int wait = 100; // In milliseconds
 int spacer = 1;
 int width = 5 + spacer; // The font width is 5 pixels
 Max72xxPanel matrix = Max72xxPanel(pinCS, numberOfHorizontalDisplays, numberOfVerticalDisplays);
-
 MTboard::MTboard()
+{}
+MTboard::ini()
 {
   Serial.begin(57600);
   for(int n=0;n<TECLAS;n++) pinMode(puls[n],OUTPUT);
-  void iniEEPROM();
-   matrix.setPosition(0, 0, 0); // The first display is at <0, 0>
+  iniEEPROM();
+  matrix.setPosition(0, 0, 0); // The first display is at <0, 0>
   matrix.setRotation(0, 0);    // The first display is position upside down
 }
 
@@ -101,7 +102,7 @@ void  MTboard::textoScroll(char *mensaje)
   byte i;
   if (i > width * strlen(mensaje) + matrix.width() - 1 - spacer)i = 0; else i++;
   for ( int i = 0 ; i < width * strlen(mensaje) + matrix.width() - 1 - spacer; i++ ) {
-    //atiendeSerie();
+    atiendeSerie();
     matrix.fillScreen(LOW);//borra todo
 
     int letter = i / width;
@@ -129,7 +130,7 @@ void MTboard::drawPixel(int x, int y,int color)
 }
 void MTboard::drawBitmap(byte icono)
 {
-	atiendeSerie();
+  atiendeSerie();
   matrix.fillScreen(0);
   switch(icono)
   {
@@ -161,7 +162,7 @@ long tiempo = millis();
 for (int n = 0; n < TECLAS; n++) pinMode(puls[n], INPUT_PULLUP);
 
   do {
-	atiendeSerie();
+	
     for (int c = 0; c < TECLAS; c++) //declaro e inicio la variable c simultaneamente
     {
       if (digitalRead(puls[c]) == LOW)
@@ -176,6 +177,7 @@ for (int n = 0; n < TECLAS; n++) pinMode(puls[n], INPUT_PULLUP);
         //if (c==cual)return true; else return false;
       }
     }
+	atiendeSerie();
   }while ((millis() - tiempo) < cuanto ); // repite por siempre, sale cuando se pulsa una tecla con return
   //Serial.println("no pulsdo");
   for (int n = 0; n < TECLAS; n++) pinMode(puls[n], OUTPUT);
@@ -183,7 +185,7 @@ for (int n = 0; n < TECLAS; n++) pinMode(puls[n], INPUT_PULLUP);
 }
 byte MTboard::leePulsador()
 {
-
+  atiendeSerie();
   for (int n = 0; n < TECLAS; n++) pinMode(puls[n], INPUT_PULLUP);
     for (int c = 0; c < TECLAS; c++) //declaro e inicio la variable c simultaneamente
     {
@@ -272,8 +274,8 @@ void  MTboard::atiendeSerie(void)
         Serial.println(password);
         EEPROM.put(passwordAdd,password);
         EEPROM[crcAdd]=XORChecksum8();
-      }else if(strncmp(buffer,password,strlen(password))==0){Serial.println("PASSWORD OK\n");passwordOk=true;}else Serial.println("ERROR\n");
-     }else if(strncmp(buffer,password,strlen(password))==0){Serial.println("PASSWORD OK\n");passwordOk=true;}else Serial.println("PASSWORD MAL\n");
+      }else if(strncmp(buffer,password,strlen(password))==0){Serial.println("PASSWORD OK\n");passwordOk=true;Serial.println(mensaje);}else Serial.println("ERROR\n");
+     }else if(strncmp(buffer,password,strlen(password))==0){Serial.println("PASSWORD OK\n");passwordOk=true;Serial.println(mensaje);}else Serial.println("PASSWORD MAL\n");
     
     
   }  
@@ -293,8 +295,8 @@ void MTboard::iniEEPROM(void)
     }
     EEPROM.get(passwordAdd,password);
     EEPROM.get(mensajeAdd,mensaje);
-    Serial.println(XORChecksum8());
-    Serial.println(password);
-    Serial.println(mensaje);
+    //Serial.println(XORChecksum8());
+    //Serial.println(password);
+    //Serial.println(mensaje);
   
 }
