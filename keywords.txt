@@ -1,0 +1,33 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+
+#######################################
+# Datatypes  and Class (KEYWORD1)
+#######################################
+
+MTboard	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+   apagaTodos  KEYWORD2
+   enciendeTodos  KEYWORD2
+   enciendeLed  KEYWORD2
+esperaPulsador  KEYWORD2
+leePulsador  KEYWORD2
+ 
+   textoScroll  KEYWORD2
+   drawPixel  KEYWORD2
+   drawBitmap  KEYWORD2
+   borrar  KEYWORD2
+   print  KEYWORD2
+   atiendeSerie  KEYWORD2
+   coordenadasShow  KEYWORD2
+   fijaLed  KEYWORD2
+
+######################################
+# Constants (LITERAL1)
+#######################################
+KEY_NONE	LITERAL1  
+
