@@ -1,0 +1,99 @@
+{Program	GerbTool for Layout
+	{Version	8.0}
+	{Created	Wed Aug 12 09:40:02 2020}
+}
+{Environment
+	{FilesPath  C:\USERS\NANO\DOCUMENTS\CACHEDUINO\MTBOARD}
+}
+{Layers
+	{Layer  1
+		{File        PULSADORES_VER2.TOP}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  Red}
+		{DrawColor   Red}
+		{Type        Top}
+	}
+	{Layer  2
+		{File        PULSADORES_VER2.BOT}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  col10}
+		{DrawColor   col10}
+		{Type        Bottom}
+	}
+	{Layer  3
+		{File        PULSADORES_VER2.SMT}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  Green}
+		{DrawColor   Green}
+		{Type        Other}
+	}
+	{Layer  4
+		{File        PULSADORES_VER2.SMB}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  vga16yellow}
+		{DrawColor   vga16yellow}
+		{Type        Other}
+	}
+	{Layer  5
+		{File        PULSADORES_VER2.SST}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  White}
+		{DrawColor   White}
+		{Type        Other}
+	}
+	{Layer  6
+		{File        PULSADORES_VER2.DRD}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  Red}
+		{DrawColor   Red}
+		{Type        Other}
+	}
+	{Layer  7
+		{File        PULSADORES_VER2.DRL}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  White}
+		{DrawColor   White}
+		{Type        Other}
+	}
+	{Layer  8
+		{File        PULSADORES_VER2.BRD}
+		{LyrName     -}
+		{ApList      }
+		{Visibility  On}
+		{FlashColor  col1}
+		{DrawColor   col1}
+		{Type        Other}
+	}
+}
+{Format Gerber
+	{Dialect           RS274X}
+	{m.n               3.4}
+	{Mode              Absolute}
+	{ZeroSuppression   Leading}
+	{Terminator        0x2a, 0xD, 0xA}
+	{Metric            No}
+	{Modal             No}
+	{UserData          Yes}
+	{Nets              No}
+	{Gcmds             Yes}
+	{CharSet           ASCII}
+	{Arcs360           No}
+	{ArcsModal         Yes}
+	{HonorCrLf         No}
+	{Comments          Yes}
+	{Flags             0}
+}
