@@ -15,3 +15,4 @@ Necesita tener intalada la librería MAX72xxpanel:
 https://github.com/markruys/arduino-Max72xxPanel
 
 Y la librería Adafruit_GFX: https://github.com/adafruit/Adafruit-GFX-Library
+EL diseño electrónico consta de:
